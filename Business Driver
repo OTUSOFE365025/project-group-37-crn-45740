@@ -5,4 +5,6 @@ assistant integrates with external university systems (LMS, registration, calend
 to deliver contextual answers.
 
 We want to create a system that is maintainable, scalable and reliable. 
-Since it will be utilized by lots of users, the architecture must be able to handle many requests without long response times.
+For students it will save time and keep them organized. 
+For instructors, it makes sharing updates and managing classes easy and simple.
+For administrators, it will make data management consistent and clear.
