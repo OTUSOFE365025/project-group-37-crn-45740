@@ -1,7 +1,8 @@
 # Use Cases
 After reviewing the requirements, the following 6 use cases were identified.
 
-> [!NOTE] This is not an exhaustive list. These are simply 6 use cases identified of the many that exist.
+> [!NOTE]
+> This is not an exhaustive list. These are simply 6 use cases identified of the many that exist.
 
 - [UC-1] The student exports their calendar
   - [RS13]
