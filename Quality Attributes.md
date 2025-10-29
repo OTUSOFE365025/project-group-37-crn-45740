@@ -2,7 +2,7 @@
 After reviewing the requirements, the following Quality Attributes were identified, with up to three requirements provided for each as examples:
 
 - Reliability
-  - [RS7] The system shall remain available 99.5% of the time per month.
+  - [RS11] The system shall remain available 99.5% of the time per month.
   - [RA6] The system shall provide high availability with automatic fail-over and backup recovery.
   - [RD3] The system shall handle failures in data source availability gracefully (retry and recovery).
 - Usability
