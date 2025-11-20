@@ -82,7 +82,7 @@ For developing the structures to support primary functionallity, this iteration 
 | Three Tier Deployment | Security (+ CRN-4)<br>Simple (+ CRN-6) | High complexity and overhead (-QA-2) | High |
 | Four Tier Deployment | Security (+ CRN-4)<br> |Highest complexity (-QA-2) <br> Difficult to maintain (-QA-6)| Medium |
 
-After reviewing the above table, the decision is to move forward with the **Distributed Deployment** for the user interface.
+After reviewing the above table, the decision is to move forward with the **Distributed Deployment** for the Scalability.
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
