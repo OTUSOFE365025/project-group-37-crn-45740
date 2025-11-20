@@ -86,6 +86,23 @@ After reviewing the above table, the decision is to move forward with the **Dist
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
+To implement the **Distributed Deployment**, the following design decisions have been made:
+| Design Decision | Rationale |
+| --------------- | --------- |
+|use Postgressql|provides scalability across distributed systems|
+|use azure hosting|built-in scaling, load balancing, and redundancy|
+|Impliment a rest api|easier scaling and communication|
+
 ## Step 6 - Sketch Views and Record Design Decisions
 
+
+
 ## Step 7 - Perform Analysis of Current Design and Review Iteration Goal and Design Objectives
+
+| Driver ID | Design Decision | Rationale |
+| --------- | --------------- | --------- |
+|QA-5|Use Azure hosting|Azure provides automatic scaling, redundancy, and distributed load balancing. Perfect for scalability.|
+|UC-4|Implement a REST API|This API will make it easy for us to transfer and store data.|
+|UC-2|Use PostgreSQL|enables fast retrieval of data.|
+|CRN-2|Use Azure hosting|Azure's Cloud infrastructure can easily scale to support well over 5,000 concurrent users under load.|
+|CRN-6|Implement a REST API|It will allow us to keep response times under 2 seconds|
