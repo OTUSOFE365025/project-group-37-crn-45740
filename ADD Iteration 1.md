@@ -60,17 +60,10 @@ After reviewing the drivers, iteration 1 will be focused on **establishing an ov
 
 More specifically, the following drivers will be focused on during this iteration:
 
-| Driver ID | Driver Name                                                                    |
-| --------- | ------------------------------------------------------------------------------ |
-| QA-1      | Reliability                                                                    |
-| QA-2      | Usability                                                                      |
-| CRN-3     | The system shall ensure that only authorized lecturers can modify course data. |
-| UC-1      | The student exports their calendar                                             |
-| UC-2      | The student uses the dashboard to view their grades                            |
-| UC-3      | A lecturer posts and announcement for their course                             |
-| UC-4      | A lecturer uploads courses' content via the AIDAP                              |
-| UC-5      | An administrator sends a campus-wide announcement                              |
-| UC-6      | An administrator generates an analytics report                                 |
+| Driver ID | Driver Name |
+| --------- | ----------- |
+| QA-1      | Reliability |
+| QA-2      | Usability   |
 
 ## Step 3 - Choose One or More Elements of the System to Decompose
 
@@ -78,6 +71,15 @@ For developing the overall system, this iteration will be focusing on the **User
 how the user interacts with the system and the architecture that supports that.
 
 ## Step 4 - Choose One or More Design Concepts that Satisfy the Inputs Considered in the Iteration
+
+**Design Choice** - System Architecture
+| Design Concept | Pros | Cons | Cost |
+| ----------------------- | ------------------------------ | ------------------------------------------------- | ---- |
+| Rich Client Application | Highly Responsive (+ QA-1)<br> | Needs to be installed on each device (- QA-2) | High |
+| Rich Internet Application | Highly Responsive (+ QA-1)<br>Can be accessed anywhere (+ QA-2) | Requires an internet connection to use (- QA-2) | Medium |
+| Mobile Application | Can be accessed from anywhere (+ QA-2) | Unable to reliably access any remote data (- QA-1, - QA-2) | High |
+
+After reviewing the above table, the decision is to move forward with the **Rich Internet Application** for the user interface.
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
