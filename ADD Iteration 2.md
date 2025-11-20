@@ -38,12 +38,12 @@ For administrators, it will make data management consistent and clear.
 
 ### Quality Attributes
 
-- Reliability
-- Usability
-- Privacy & Security
-- Interoperability
-- Scalability
-- Maintainability
+- QA-1 Reliability
+- QA-2 Usability
+- QA-3 Privacy & Security
+- QA-4 Interoperability
+- QA-5 Scalability
+- QA-6 Maintainability
 
 ### Use Cases
 
@@ -55,10 +55,34 @@ For administrators, it will make data management consistent and clear.
 - UC-6 An administrator generates an analytics report
 
 ## Step 2 - Establish Iteration Goal by Selecting Drivers
+After reviewing the drivers, iteration 2 will be focused on **Identifying Structures to Support Primary Functionality**.
+
+More specifically, the following drivers will be focused on during this iteration:
+|Driver ID | Driver Name                                      |
+|----------|--------------------------------------------------|
+| QA-5     | Scalability                                      |
+| UC-4     | A lecturer uploads courses content via the AIDAP |
+| UC-2 | The student uses the dashboard to view their grades|
+| CRN-1    |The system shall maintain data integrity and consistency across systems.|
+| CRN-2 | The system shall support scalability to handle up to 5,000 concurrent users. |
+| CRN-5 | The system shall remain available 99.5% of the time per month. |
+| CRN-6 | The system shall respond to queries within 2 seconds on average under normal load. |
 
 ## Step 3 - Choose One or More Elements of the System to Decompose
 
+For developing the structures to support primary functionallity, this iteration will be focusing on the **Hosting**, which will include how databases are hosted in the cloud.
+
 ## Step 4 - Choose One or More Design Concepts that Satisfy the Inputs Considered in the Iteration
+
+**Design Choice** - Hosting Architecture
+| Design Concept | Pros | Cons | Cost |
+| ----------------------- | ------------------------------ | ------------------------------------------------- | ---- |
+| Distributed Deployment | Scalability (+ QA-5)<br> | Network Latency (- CRN-6) | High |
+| Two Tier Deployment | Simple (+ CRN-6)<br> | Not Secure (- CRN-4) | Low |
+| Three Tier Deployment | Security (+ CRN-4)<br> | Simple (+ CRN-6)<br> | High |
+| Four Tier Deployment | Security (+ CRN-4)<br> | Medium |
+
+After reviewing the above table, the decision is to move forward with the **Distributed Deployment** for the user interface.
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
