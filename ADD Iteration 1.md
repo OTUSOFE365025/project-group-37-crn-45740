@@ -38,12 +38,12 @@ For administrators, it will make data management consistent and clear.
 
 ### Quality Attributes
 
-- Reliability
-- Usability
-- Privacy & Security
-- Interoperability
-- Scalability
-- Maintainability
+- QA-1 Reliability
+- QA-2 Usability
+- QA-3 Privacy & Security
+- QA-4 Interoperability
+- QA-5 Scalability
+- QA-6 Maintainability
 
 ### Use Cases
 
@@ -56,7 +56,26 @@ For administrators, it will make data management consistent and clear.
 
 ## Step 2 - Establish Iteration Goal by Selecting Drivers
 
+After reviewing the drivers, iteration 1 will be focused on **establishing an overall system structure**.
+
+More specifically, the following drivers will be focused on during this iteration:
+
+| Driver ID | Driver Name                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| QA-1      | Reliability                                                                    |
+| QA-2      | Usability                                                                      |
+| CRN-3     | The system shall ensure that only authorized lecturers can modify course data. |
+| UC-1      | The student exports their calendar                                             |
+| UC-2      | The student uses the dashboard to view their grades                            |
+| UC-3      | A lecturer posts and announcement for their course                             |
+| UC-4      | A lecturer uploads courses' content via the AIDAP                              |
+| UC-5      | An administrator sends a campus-wide announcement                              |
+| UC-6      | An administrator generates an analytics report                                 |
+
 ## Step 3 - Choose One or More Elements of the System to Decompose
+
+For developing the overall system, this iteration will be focusing on the **User Interface**, which will include
+how the user interacts with the system and the architecture that supports that.
 
 ## Step 4 - Choose One or More Design Concepts that Satisfy the Inputs Considered in the Iteration
 
