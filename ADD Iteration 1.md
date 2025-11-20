@@ -69,9 +69,10 @@ More specifically, the following drivers will be focused on during this iteratio
 | CRN-3     | The system shall ensure that only authorized lecturers can modify course data |
 
 ## Step 3 - Choose One or More Elements of the System to Decompose
-
-For developing the overall system, this iteration will be focusing on the **User Interface**, which will include
-how the user interacts with the system and the architecture that supports that.
+To achieve the iteration goal of developing the overall system, this iteration will be focusing on:
+* The **User Interface**, which will include how the user interacts with the system.
+* The **Server**, including authentication and business logic.
+* The **Data Access Layer**, including the potential data storage systems.
 
 ## Step 4 - Choose One or More Design Concepts that Satisfy the Inputs Considered in the Iteration
 
@@ -103,4 +104,14 @@ To implement the **Rich Internet Application**, the following design decisions h
 
 ![Sequence Diagram](./assets/phase2/uc2-seq-diagram.png)
 
+##### Deployment Diagram
+
+![Deployment Diagram](./assets/phase2/iter1-deployment-diagram.drawio.png)
+
 ## Step 7 - Perform Analysis of Current Design and Review Iteration Goal and Design Objectives
+| Driver ID | Design Decision | Rationale |
+| --------- | --------------- | --------- |
+| QA-1      | Use PostgreSQl as a backend database | Using a relational database provides high reliability when it comes to accessing data. Additionally, PostgreSQL is a very stable database, further contributing to reliability. |
+| QA-2, UC-2      | Use Redis for caching, Next.js as Rich UI | Redis allows for data caching, which keeps frequently-used data in a place that's very easy to reach quickly, making the user experience smoother.<br>By using Next.js, the website is separated into components, allowing the development team to pick and choose what the user sees, further improving usability. |
+| QA-3, CRN-3      | Use JSONWebTokens for authentication | JSONWebTokens (JWTs) are an industry standard for handling authentication. By using JWTs, data can be separated out based on user roles, which allows for data to only be seen by its intended recipient. |
+
