@@ -77,10 +77,10 @@ For developing the structures to support primary functionallity, this iteration 
 **Design Choice** - Hosting Architecture
 | Design Concept | Pros | Cons | Cost |
 | ----------------------- | ------------------------------ | ------------------------------------------------- | ---- |
-| Distributed Deployment | Scalability (+ QA-5)<br> | Network Latency (- CRN-6) | High |
-| Two Tier Deployment | Simple (+ CRN-6)<br> | Not Secure (- CRN-4) | Low |
-| Three Tier Deployment | Security (+ CRN-4)<br> | Simple (+ CRN-6)<br> | High |
-| Four Tier Deployment | Security (+ CRN-4)<br> | Medium |
+| Distributed Deployment | Scalability (+ QA-5) | Network Latency (- CRN-6) | High |
+| Two Tier Deployment | Simple (+ CRN-6) | Not Secure (- CRN-4) | Low |
+| Three Tier Deployment | Security (+ CRN-4)<br>Simple (+ CRN-6) | High complexity and overhead (-QA-2) | High |
+| Four Tier Deployment | Security (+ CRN-4)<br> |Highest complexity (-QA-2) <br> Difficult to maintain (-QA-6)| Medium |
 
 After reviewing the above table, the decision is to move forward with the **Distributed Deployment** for the user interface.
 
@@ -95,7 +95,13 @@ To implement the **Distributed Deployment**, the following design decisions have
 
 ## Step 6 - Sketch Views and Record Design Decisions
 
+##### Sequence Diagram for UC-4 (successful upload)
 
+![Sequence Diagram](./assets/phase2/uc4-seq-diagram.png)
+
+##### Deployment Diagram
+
+![Deployment Diagram](./assets/phase2/iter2-deployment-diagram.drawio.png)
 
 ## Step 7 - Perform Analysis of Current Design and Review Iteration Goal and Design Objectives
 
