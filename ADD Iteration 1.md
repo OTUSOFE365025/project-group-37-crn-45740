@@ -60,10 +60,13 @@ After reviewing the drivers, iteration 1 will be focused on **establishing an ov
 
 More specifically, the following drivers will be focused on during this iteration:
 
-| Driver ID | Driver Name |
-| --------- | ----------- |
-| QA-1      | Reliability |
-| QA-2      | Usability   |
+| Driver ID | Driver Name                                                                   |
+| --------- | ----------------------------------------------------------------------------- |
+| QA-1      | Reliability                                                                   |
+| QA-2      | Usability                                                                     |
+| QA-3      | Privacy & Security                                                            |
+| UC-2      | The student uses the dashboard to view their grades                           |
+| CRN-3     | The system shall ensure that only authorized lecturers can modify course data |
 
 ## Step 3 - Choose One or More Elements of the System to Decompose
 
@@ -83,6 +86,21 @@ After reviewing the above table, the decision is to move forward with the **Rich
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
+To implement the **Rich Internet Application**, the following design decisions have been made:
+| Design Decision | Rationale |
+| --------------- | --------- |
+| Use PostgreSQL for the data storage | PostgreSQL is an open source, reliable (QA-1). The choice to use a relational database is to increase the cohesion of data, making it easier to query, which allows for better usage by the consumer on the frontend (QA-2) |
+| Use Redis as a cache for frequently used & aggregated data | Caching allows the user to quickly access data that is frequently accessed, allowing for much faster response times and higher usability (QA-2). |
+| Implement Rich UI using Next.js | Next.js is a popular web development framework for providing the user access to backend information. It's a highly reliable framework (QA-1), and due to it's "Hydration" feature, which allows pages to be send to the client before the rich, JavaScript is processed, increases usability (QA-2) |
+| Use JSONWebTokens (JWTs) to implement the authentication system | A huge factor of web applications is providing a level of security, which JWTs provide (QA-3). By using user roles with JWTs, it's also possible to separate who gets access to what information (CRN-3). Additionally, by using JWTs, the user does not have to enter their credentials every time they want to access restricted data (QA-2). |
+| Use express to implement a backend REST API | To provide a layer of business logic, the express framework is efficient and reliable (QA-1), while also being written in JavaScript, a familiar language. This also allows the rich UI that the user accesses to communicate with the database, allowing the user to retrieve information from the DB (UC-2, QA-2) |
+
 ## Step 6 - Sketch Views and Record Design Decisions
+
+##### Sequence Diagram for UC-2 (successful authentication, grades not cached)
+
+<!-- PlantUML Online Editor: RPHDKzim48Rl-XKxN6fF9eHoxA435CemCCN5m5sHDaR5bbn9JkY_x-eZNyQJY-9zzlM-xsfyuJotVkXQneKt5ce_IDGUk0D7HzPJLGdLSths2p_ywHyNQfgEHxMJfvlw6IwhEoZmexVeN7aIG3gDmCl1lz4RbE1U6GqrshKIE6hZ18tqKIeNQuABDpmkLiRvncBz-o4ISiaOAHWzT4kqyFMKVl41ULHhxX6CPi4UpEVVenUOpU0RFE7VWUQ5rZHAGx5Pm8j3gtc7C8EAExSnLfOiDeJEO2vrLe_aVX6cNiHc5ak12SyImxt7hlSFeLwKB1O28PUfNhX1Y900DEZ3YtzQqrrV4Kh4Jce-Fq8hQzPA8Wp4Wz8hOxkOwru-Jq9T3MgqvBwcJaAUpJk6GNQZPbz4df-TmUCz59c4Y1uOpzaHMQT1LaERKriXoYKNxwCDdDC69X9_LRY1ndA9RYhMsnjArQKhkKWO50SN26KvbVIQjqgEZVhaOIAN0m-vCmIuquttBGdJOdw4V_8spbBaqKgMc6FPI4AddDjhRNTDGaaYxtWdb5UzL_cywin-STlWHfDktvovJrJC-M376KlpJ2xvMhc-vVyomYvGI_fY_0S0 -->
+
+![Sequence Diagram](./assets/phase2/uc2-seq-diagram.png)
 
 ## Step 7 - Perform Analysis of Current Design and Review Iteration Goal and Design Objectives
