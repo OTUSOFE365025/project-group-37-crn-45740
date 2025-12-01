@@ -1,4 +1,4 @@
-# ADD Iteration 2
+# ADD Iteration 3
 
 ## Step 1 - Review Inputs
 
@@ -55,57 +55,53 @@ For administrators, it will make data management consistent and clear.
 - UC-6 An administrator generates an analytics report
 
 ## Step 2 - Establish Iteration Goal by Selecting Drivers
+
 After reviewing the drivers, iteration 2 will be focused on **Including the
 Quality Attributes into the design**.
 
 More specifically, the following drivers will be focused on during this iteration:
-|Driver ID | Driver Name                                      |
+|Driver ID | Driver Name |
 |----------|--------------------------------------------------|
-| QA-4     | Interoperability                                 |
-| QA-6     | Maintaainability                                 |
-
+| QA-4 | Interoperability |
+| QA-6 | Maintainability |
 
 ## Step 3 - Choose One or More Elements of the System to Decompose
 
 For Including the Quality Attributes into the design, this iteration will be focusing on:
+
 - Communication protocols
 - Logging
 
 ## Step 4 - Choose One or More Design Concepts that Satisfy the Inputs Considered in the Iteration
 
 **Design Choice** - Communication Protocols
-| Design Concept             | Pros                                        | Cons                                                         | Cost       |
+| Design Concept | Pros | Cons | Cost |
 | -------------------------- | ------------------------------------------- | ------------------------------------------------------------ | ---------- |
-| **REST (JSON over HTTPS)** | Simple, widely supported,                   | bad for high-performance use cases                           | Low        |
-| **gRPC**                   | High performance, strong typing             | Bad for browser clients                                      | Medium     |
-| **GraphQL**                | Flexible queries, reduces over-fetching     | Caching is difficult                                         | High       |
-| **WebSockets**             | Real-time bidirectional communication       | Requires connection management                               | Medium     |
+| **REST (JSON over HTTPS)** | Simple, widely supported, | bad for high-performance use cases | Low |
+| **gRPC** | High performance, strong typing | Bad for browser clients | Medium |
+| **GraphQL** | Flexible queries, reduces over-fetching | Caching is difficult | High |
+| **WebSockets** | Real-time bidirectional communication | Requires connection management | Medium |
 
 After reviewing the above table, the decision is to move forward with a **REST (JSON over HTTPS)** api for the wide spread support.
 
 ## Step 5 - Instantiate Architectural Elements, Allocate Responsibilites, and Define Interfaces
 
 To implement the **REST (JSON over HTTPS)** API, the following design decisions have been made:
-| Design Decision                          | Rationale                                                     |
+| Design Decision | Rationale |
 | ---------------------------------------- | ------------------------------------------------------------- |
-|Enforce authentication on all endpoints   | Controlls access to system resources                          |
-|Implement logging for all API interactions| Good for debugging, supports monitoring, and error tracing    |
-|Introduce API rate-limiting               | Prevents abuse and ensures scalability during high-load       |
+|Enforce authentication on all endpoints | Controls access to system resources |
+|Implement logging for all API interactions| Good for debugging, supports monitoring, and error tracing |
+|Introduce API rate-limiting | Prevents abuse and ensures scalability during high-load |
 
 ## Step 6 - Sketch Views and Record Design Decisions
 
-##### Sequence Diagram for UC-6 (Generating Analitics Report)
+##### Sequence Diagram for UC-6 (Generating Analytics Report)
 
 ![Sequence Diagram](./assets/phase3/uc6-seq-diagram.png)
 
-##### Deployment Diagram
-
-![Deployment Diagram](./assets/phase3/iter3-deployment-diagram.drawio.png)
-
 ## Step 7 - Perform Analysis of Current Design and Review Iteration Goal and Design Objectives
 
-| Driver ID | Design Decision                                         | Rationale                                                              |
-| --------- | ------------------------------------------------------- | ---------------------------------------------------------------------- |
-| QA-6      | Implement logging for all API interactions              | Structured logs simplify debugging, improving long-term maintainability|                
-| QA-4      | Use REST (JSON over HTTPS) as the communication protocol| REST with JSON is widely supported, providing easy integration         |
-
+| Driver ID | Design Decision                                          | Rationale                                                               |
+| --------- | -------------------------------------------------------- | ----------------------------------------------------------------------- |
+| QA-6      | Implement logging for all API interactions               | Structured logs simplify debugging, improving long-term maintainability |
+| QA-4      | Use REST (JSON over HTTPS) as the communication protocol | REST with JSON is widely supported, providing easy integration          |
